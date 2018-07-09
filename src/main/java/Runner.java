@@ -18,6 +18,11 @@ public class Runner {
             System.out.println(golfer.getFirstName() + " " + golfer.getLastName());
         }
 
+    Golfer golfPerson = DBGolfer.find(golfer2.getId());
+        System.out.println(golfPerson.getFirstName());
+
+
+
             System.exit(0);
 
         }
