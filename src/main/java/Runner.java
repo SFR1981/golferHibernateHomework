@@ -13,7 +13,10 @@ public class Runner {
       DBGolfer.save(golfer3);
 
 
-        List<Golfer> pirates = DBGolfer.getAll();
+        List<Golfer> golfers = DBGolfer.getAll();
+        for (Golfer golfer : golfers ){
+            System.out.println(golfer.getFirstName() + " " + golfer.getLastName());
+        }
 
             System.exit(0);
 
