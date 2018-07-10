@@ -64,6 +64,23 @@ public class DBGolfer {
             session.close();
         }
         return result;
+
+    }
+    public static Golfer findByName(String name){
+        Golfer result = null;
+        session = HibernateUtil.getSessionFactory().openSession();
+
+        try{
+            Criteria cr = session.createCriteria(Golfer.class);
+            cr.add(Restrictions.eq("firstName", name));
+            result = (Golfer) cr.uniqueResult();
+
+        }catch (HibernateException e){
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return result;
     }
 
 //
